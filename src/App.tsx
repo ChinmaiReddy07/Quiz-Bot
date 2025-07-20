@@ -10,6 +10,7 @@ import Results from './components/Results';
 import { Player, Question, Quiz, QuizState, QuizSession } from './types/quiz';
 import { quizStorage } from './utils/quizStorage';
 import { parseURL, updateURL, clearURL } from './utils/urlParser';
+import DarkMode from './components/DarkMode';
 
 type AppState = 'dashboard' | 'creator' | 'join' | 'host' | 'player' | 'results';
 
@@ -281,6 +282,8 @@ function App() {
   }
 
   return (
+    <>
+    <DarkMode /> {/* ✅ Dark mode toggle always available */}
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
@@ -350,6 +353,7 @@ function App() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
